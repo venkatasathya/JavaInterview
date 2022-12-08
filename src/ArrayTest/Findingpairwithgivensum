@@ -1,0 +1,57 @@
+import java.util.Arrays;
+
+class Test3
+{
+    // Function to find a pair with the given difference in the array.
+    // This method handles duplicates in the array
+    public static void findPair(int[] A, int diff)
+    {
+        // sort array in ascending order
+        Arrays.sort(A);
+
+        // maintain two indices in the array
+        int i = 0, j = 0;
+        int n = A.length;
+
+        // run till the end of the array is reached
+        while (i < n && j < n)
+        {
+            // to avoid printing duplicates
+            while (i < n - 1 && A[i] == A[i+1]) {
+                i++;
+            }
+
+            while (j < n - 1 && A[j] == A[j+1]) {
+                j++;
+            }
+
+            // increment `i` if the current difference is more than
+            // the desired difference
+            if (A[j] - A[i] > diff) {
+                i++;
+            }
+
+            // increment `j` if the current difference is less than
+            // the desired difference
+            else if (A[j] + A[i] < diff) {
+                j++;
+            }
+
+            // print the pair and increment both `i` & `j` if the current
+            // difference is the same as the desired difference
+            else {
+                System.out.println("(" + A[j] + ", " + A[i] + ")");
+                i++;
+                j++;
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] A = { 1, 5, 2, 2, 2, 5, 5, 4 };
+        int diff = 3;
+
+        findPair(A, diff);
+    }
+}
