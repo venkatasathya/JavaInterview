@@ -3,15 +3,16 @@ package streams;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
-public class HighestValueStream {
+public class SecondSmallestElement {
+
     public static void main(String[] args) {
-        Stream<Integer> integerStream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8);
-        Integer integer = integerStream
+        Integer integer = Stream.of(7, 7, 7, 7, 7)
+                .distinct()
                 .sorted(Comparator.reverseOrder())
-                .limit(2)
                 .skip(1)
                 .findFirst()
-                        .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException("array does't have second values"));
+
         System.out.println(integer);
     }
 }

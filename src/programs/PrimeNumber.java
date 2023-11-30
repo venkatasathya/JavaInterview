@@ -1,13 +1,12 @@
 package programs;
 
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class PrimeNumber {
     public static void main(String[] args) {
         for(int j=2;j<=100;j++){
             boolean prime = isPrime(j);
-            if(prime==true){
+            if(prime){
                 System.out.println("Prime Number in between 1-100 :"+j);
             }
         }

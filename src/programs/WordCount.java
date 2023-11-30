@@ -16,7 +16,8 @@ public class WordCount {
                                 .sorted(Comparator.reverseOrder()).forEach(System.out::println);*/
 
         wordsList.stream().sorted((s1, s2) -> s2.length() - s1.length()).forEach(System.out::println);
-        Map<Integer, Integer> collect = wordsList.stream().map(String::length).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(e -> 1)));
+        Map<Integer, Integer> collect = wordsList.stream().map(String::length).collect(Collectors
+                .groupingBy(Function.identity(), Collectors.summingInt(e -> 1)));
         System.out.println(collect.entrySet().stream());
 
 

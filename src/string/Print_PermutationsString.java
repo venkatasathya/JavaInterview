@@ -18,6 +18,7 @@ public class Print_PermutationsString {
         for (int i = 0; i < str.length(); i++) {
             char chs = str.charAt(i);
             final String perString = str.substring(0, i) + str.substring(i + 1);
+            System.out.println("====================="+perString);
             printPermutn(perString, temp + chs);
 
         }

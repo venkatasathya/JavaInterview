@@ -1,3 +1,5 @@
+package ArrayTest;
+
 import java.util.Arrays;
 
 class Test3

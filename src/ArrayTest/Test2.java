@@ -1,3 +1,5 @@
+package ArrayTest;
+
 public class Test2 {
     public static void main(String[] args) {
         int arr[]= {1,3,2,5,4,3,1};

@@ -1,10 +1,10 @@
 package programs;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Fibonic {
     public static void main(String[] args) {
-
-
-
 
         int n1=0,n2=1,n3,i,count=9;
 
