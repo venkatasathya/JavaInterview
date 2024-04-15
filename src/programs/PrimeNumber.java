@@ -12,7 +12,7 @@ public class PrimeNumber {
             }
         }
 
-        IntStream.range(1,100).filter(PrimeNumber::isPrime).forEach(System.out::println);
+       // IntStream.range(4,9).filter(PrimeNumber::isPrime).forEach(System.out::println);
     }
 
    static boolean isPrime(Integer number){

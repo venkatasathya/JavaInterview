@@ -1,6 +1,7 @@
 package streams;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -11,6 +12,8 @@ public class JavaStreamsExample {
         List<Employee> collect = Arrays.stream(arrayOfEmps).sequential().filter(employee -> employee.getV() > 100000.0).collect(Collectors.toList());
         System.out.println(Optional.ofNullable(collect).isPresent());
         if(Optional.ofNullable(collect).isPresent()) collect.forEach(System.out::println);
+        Employee employee = Arrays.stream(arrayOfEmps).min(Comparator.comparing(Employee::getJeff_bezos)).get();
+        System.out.println(employee);
     }
 
     private static Employee[] arrayOfEmps = {
